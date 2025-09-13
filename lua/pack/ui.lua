@@ -3,20 +3,20 @@ require('gruvbox-material').setup()
 vim.cmd.colorscheme 'gruvbox-material'
 
 vim.pack.add({
-    "https://github.com/sphamba/smear-cursor.nvim",   -- make cursor into sludge
-    "https://github.com/nvim-lualine/lualine.nvim",   -- line
-    "https://github.com/akinsho/bufferline.nvim",     -- buffer line
+    "https://github.com/sphamba/smear-cursor.nvim", -- make cursor into sludge
+    "https://github.com/nvim-lualine/lualine.nvim", -- line
+    "https://github.com/akinsho/bufferline.nvim",   -- buffer line
 })
 
 
 require('smear_cursor').setup {
-    cursor_color = "#ebdbb2",
+    -- cursor_color = "#ebdbb2",
     trailing_stiffness = 0.3,
     damping = 0.8,
     trailing_exponent = 7,
     never_draw_over_target = true,
     gamma = 1,
-    transparent_bg_fallback_color = "#282828",
+    -- transparent_bg_fallback_color = "#282828",
 }
 
 require('lualine').setup({
