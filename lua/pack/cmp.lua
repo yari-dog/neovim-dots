@@ -4,16 +4,19 @@ vim.pack.add({
 
 require("blink.cmp").setup({
     {
-        keymap = { preset = 'default' },
+        keymap = {
+            preset = 'default',
+        },
         appearance = {
             nerd_font_variant = 'mono'
         },
-        completion = { documentation = { auto_show = false } },
+        completion = {
+            documentation = { auto_show = true },
+            ghost_text = { enabled = true }
+        },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
         fuzzy = { implementation = "rust_prefered" }
     },
-    opts_extend = { "sources.default" }
 })
-

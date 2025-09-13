@@ -28,8 +28,8 @@ vim.keymap.set({ "n", "x" }, "m", "<PageUp>", { desc = "PgUp" })
 vim.keymap.set({ "n", "x" }, "k", "<PageDown>", { desc = "PgDown" })
 
 -- Jumplist navigation
-vim.keymap.set({ "n" }, "<C-i>", "<C-i>", { desc = "Jumplist forward" })
-vim.keymap.set({ "n" }, "<C-e>", "<C-o>", { desc = "Jumplist forward" })
+-- vim.keymap.set({ "n" }, "<C-i>", "<C-i>", { desc = "Jumplist forward" })
+-- vim.keymap.set({ "n" }, "<C-e>", "<C-o>", { desc = "Jumplist forward" })
 
 -- End of word left/rigt
 vim.keymap.set({ "n", "o", "x" }, "I", "ge", { desc = "End of word back" })
