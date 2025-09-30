@@ -9,7 +9,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- source
-vim.keymap.set('n', '<leader>s', ':update<CR> :source<CR>')
+vim.keymap.set('n', '<leader>sc', ':update<CR> :source<CR>')
+vim.keymap.set('n', '<leader>sk', ':source ~/.config/nvim/lua/config/keymaps.lua<CR>')
 
 -- select current line
 vim.keymap.set({ 'n' }, "<CR>", "V")
@@ -24,8 +25,8 @@ vim.keymap.set("x", "in", "") -- need to set it so that it doesnt fuck up if its
 vim.keymap.del("x", "in")     -- sends the fucking up-in-v issue to hell.
 
 -- PageUp/PageDown
-vim.keymap.set({ "n", "x" }, "m", "<PageUp>", { desc = "PgUp" })
-vim.keymap.set({ "n", "x" }, "k", "<PageDown>", { desc = "PgDown" })
+vim.keymap.set({ "n", "x" }, "m", "15gk", { desc = "PgUp" })
+vim.keymap.set({ "n", "x" }, "k", "15gj", { desc = "PgDown" })
 
 -- Jumplist navigation
 -- vim.keymap.set({ "n" }, "<C-i>", "<C-i>", { desc = "Jumplist forward" })
@@ -107,8 +108,7 @@ vim.keymap.set({ "n", "x" }, "gU", "U")
 vim.keymap.set({ "n", "x" }, "gK", "K")
 
 -- extra alias
-vim.keymap.set({ "n" }, "gh", "K")
-vim.keymap.set({ "x" }, "gh", "K")
+vim.keymap.set({ "n", "x" }, "gh", "K")
 -- Resize window using <ctrl> arrow keys
 vim.keymap.set({ "n" }, "<C-Up>", "<cmd>resize -2<cr>", { desc = "Increase Window Height" })
 vim.keymap.set({ "n" }, "<C-Down>", "<cmd>resize +2<cr>", { desc = "Decrease Window Height" })
@@ -126,7 +126,7 @@ vim.keymap.set({ "v" }, "<A-i>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 
 -- buffers
 vim.keymap.set({ "n" }, "<Leader>bn", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set({ "n" }, "<Leader>bo", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-vim.keymap.set({ "n" }, "<Leader>bk", "<cmd>bdelete<cr>", { desc = "Kill Buffer" })
+vim.keymap.set({ "n" }, "<Leader>bk", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>", { desc = "Kill Buffer" })
 vim.keymap.set({ "n" }, "<Leader>bl", "<cmd>ls<cr>", { desc = "list Buffer" })
 -- stop overwriting registers when pasting or xing
 vim.keymap.set({ "n", "v" }, "x", '"_x')
@@ -134,7 +134,7 @@ vim.keymap.set({ "x" }, "p", '"_dP')
 vim.keymap.set({ "x" }, "P", "p")
 
 -- jj to esc
-vim.keymap.set({ "i", "v", "t", "o" }, "qq", "<Esc>")
+vim.keymap.set({ "i", "v", "t", "o", "c" }, "qq", "<Esc>")
 
 -- escape terminal easier
 vim.keymap.set({ "t" }, "<Esc>", "<C-\\><C-n>")

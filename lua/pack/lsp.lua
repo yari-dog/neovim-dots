@@ -19,7 +19,7 @@ require('mason').setup({
 })
 
 vim.lsp.enable({ 'lua_ls', 'rust_analyzer', 'clangd', 'cmake-language-server', 'tailwindcss-language-server', 'css-lsp',
-    'asm-lsp', 'basedpyright' })
+    'asm-lsp', 'basedpyright', 'vim-language-server' })
 
 -- auto format, etc
 require('conform').setup {
@@ -29,6 +29,8 @@ require('conform').setup {
     },
     formatters_by_ft = {
         python     = { "black" },
+        c          = { "clang_format" },
+        cpp        = { "clang_format" },
         javascript = { "prettier" },
         html       = { "prettier" },
         css        = { "prettier" },
@@ -36,7 +38,12 @@ require('conform').setup {
         markdown   = { "prettier" },
         rust       = { "rustfmt" },
         asm        = { "asmfmt" },
-        c          = { "clang-format" }
+        toml       = { "tombi" }
+    },
+    formatters = {
+        clang_format = {
+            prepend_args = { '--style=file' },
+        }
     }
 }
 

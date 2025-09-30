@@ -8,7 +8,7 @@ vim.pack.add({
 
 require('oil').setup({
     keymaps = {
-        ["n"] = { "actions.parent", mode = "n" },
+        ["N"] = { "actions.parent", mode = "n" },
         ["p"] = { "actions.preview", mode = "n" },
         ["qq"] = { "actions.close", mode = "n" },
         ["wv"] = { "actions.select", opts = { vertical = true } },
