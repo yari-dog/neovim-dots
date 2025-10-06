@@ -4,6 +4,7 @@ vim.pack.add({
     "https://github.com/folke/lazydev.nvim",    -- fix lua_ls malding about shit
     "https://github.com/stevearc/conform.nvim", -- code formatting while keeping stuff good
     "https://github.com/mason-org/mason.nvim",  -- mason, install lsp and shit
+    "https://github.com/nvim-treesitter/nvim-treesitter",
 })
 -- get lua_ls to shut the fuck up
 require('lazydev').setup {
@@ -61,3 +62,11 @@ vim.pack.add({
 })
 
 require('nvim-autopairs').setup()
+
+require 'nvim-treesitter.configs'.setup {
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "javascript", "python" },
+    auto_install = true,
+    highlight = {
+        enable = true,
+    }
+}

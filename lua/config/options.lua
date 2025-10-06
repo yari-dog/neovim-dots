@@ -43,3 +43,5 @@ vim.o.completeopt = "menu,menuone,popup,fuzzy" -- modern completion menu
 vim.o.complete = ".,o"                         -- use buffer and omnifunc
 vim.o.autocomplete = false
 vim.o.pumheight = 7
+
+vim.g.c_syntax_for_h = 1

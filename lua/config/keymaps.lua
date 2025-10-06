@@ -32,6 +32,8 @@ vim.keymap.set({ "n", "x" }, "k", "15gj", { desc = "PgDown" })
 -- vim.keymap.set({ "n" }, "<C-i>", "<C-i>", { desc = "Jumplist forward" })
 -- vim.keymap.set({ "n" }, "<C-e>", "<C-o>", { desc = "Jumplist forward" })
 
+-- kill last highlight = <C-l>
+
 -- End of word left/rigt
 vim.keymap.set({ "n", "o", "x" }, "I", "ge", { desc = "End of word back" })
 vim.keymap.set({ "n", "o", "x" }, "<M-i>", "gE", { desc = "End of WORD back" })
@@ -68,14 +70,6 @@ vim.keymap.set({ "n" }, "U", "<C-r>")
 -- inSert/append (T)
 vim.keymap.set({ "n" }, "t", "i")
 vim.keymap.set({ "n" }, "T", "I")
--- { modes = { "n" }, "a", "a" }, // so i remember i didnt change em to t and the fix if i do change
--- { modes = { "n" }, "A", "A" },
--- 'til
--- Breaks diffput
--- { modes = { "n", "o", "x" }, "p", "t" },
--- { modes = { "n", "o", "x" }, "P", "T" },
--- Fix diffput (t for 'transfer')
--- { modes = { "n" }, "dt", "dp", desc = "diffput (t for 'transfer')" },
 
 -- Insert in Visual mode
 vim.keymap.set({ "v" }, "T", "I")
@@ -126,7 +120,7 @@ vim.keymap.set({ "v" }, "<A-i>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 
 -- buffers
 vim.keymap.set({ "n" }, "<Leader>bn", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set({ "n" }, "<Leader>bo", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-vim.keymap.set({ "n" }, "<Leader>bk", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>", { desc = "Kill Buffer" })
+vim.keymap.set({ "n" }, "<Leader>bk", "<cmd>bp<bar>sp<bar>bn<bar>bd!<cr>", { desc = "Kill Buffer" })
 vim.keymap.set({ "n" }, "<Leader>bl", "<cmd>ls<cr>", { desc = "list Buffer" })
 -- stop overwriting registers when pasting or xing
 vim.keymap.set({ "n", "v" }, "x", '"_x')
@@ -138,6 +132,7 @@ vim.keymap.set({ "i", "v", "t", "o", "c" }, "qq", "<Esc>")
 
 -- escape terminal easier
 vim.keymap.set({ "t" }, "<Esc>", "<C-\\><C-n>")
+vim.keymap.set({ "t" }, "qq", "<C-\\><C-n>")
 
 -- lsp binds
 vim.keymap.set('n', '<leader>co', vim.diagnostic.open_float, { desc = "open float" })
@@ -149,3 +144,4 @@ vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "code action
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = "rename" })
 vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { desc = "goto definition" })
 vim.keymap.set('n', '<leader>ck', vim.lsp.buf.hover, { desc = "hover" })
+vim.keymap.set('n', '<leader>ch', "<cmd>LspClangdSwitchSourceHeader<cr>", { desc = "switch to header" })
